@@ -41,16 +41,16 @@
             <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-default" href="#projects">Projects</a>
             </div>
+            <div class="btn-group" role="group">
+                <a type="button" role="button" class="btn btn-danger" href="admin.php">Admin</a>
+            </div>
         </div>
 
         <hr />
 
         <!-- NOTIFICATIONS /-->
         <div id="notify">
-            <!--<div class="alert alert-success" role="alert">No new alerts.</div>/-->
-            <div class="alert alert-danger" role="alert">I am actively working on the site - Chaka | 8-11-15 11:50 AM EST</div>
-            <div class="alert alert-info" role="alert">Remember to check <a href="#modtrain">Mod Training</a> daily!</div>
-            <div class="alert alert-warning" role="alert">Please contact Chaka or jordany7 for info on the mandatory mod training update. 8-10-15</div>
+            <?php include_once 'cgi-bin/Alerts.php'; ?>
         </div>
 
         <hr />
@@ -125,10 +125,7 @@
                     <th>Notes</th>
                 </tr>
                 <tr>
-                    <td><a href="https://github.com/CriLisCraft/Issue-Tracker/issues/62">62</a></td>
-                    <td>Donation System</td>
-                    <td><span class="label label-warning">In Progress</span></td>
-                    <td>About 50% Done</td>
+                    <td><?php include_once 'cgi-bin/Projects.php' ?>
                 </tr>
             </table>
         </div>
