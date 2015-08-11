@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" href="http://criliscraft.noip.me/CDN/CLC2/Logos/Current/favicon.png">
+    <link rel="icon" type="image/png" href="http://cdn.criliscraft.cf/Logos/Current/favicon.png">
+    <meta http-equiv="refresh" content="60">
     <title>CriLis Craft - Staff Control Panel</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
     <div id="content" class="container">
         <!-- LOGO /-->
         <div id="top" align="center">
-            <img src="http://criliscraft.noip.me/CDN/CLC2/Logos/Current/CLCStaffSiteLogo.png" />
+            <img src="http://cdn.criliscraft.cf/Logos/Current/CLCStaffSiteLogo.png" />
         </div>
 
         <!-- NAV /-->
@@ -32,7 +33,7 @@
                 <a type="button" role="button" class="btn btn-default" href="#mcbans">MCBans Status</a>
             </div>
             <div class="btn-group" role="group">
-                <a type="button" role="button" class="btn btn-default" href="#modtrain">Mod Training Updates</a>
+                <a type="button" role="button" class="btn btn-default" href="#modtrain">Mod Training</a>
             </div>
             <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-default" href="#vps-io">VPS Health I/O</a>
@@ -47,6 +48,8 @@
         <!-- NOTIFICATIONS /-->
         <div id="notify">
             <!--<div class="alert alert-success" role="alert">No new alerts.</div>/-->
+            <div class="alert alert-danger" role="alert">I am actively working on the site - Chaka | 8-11-15 11:50 AM EST</div>
+            <div class="alert alert-info" role="alert">Remember to check <a href="#modtrain">Mod Training</a> daily!</div>
             <div class="alert alert-warning" role="alert">Please contact Chaka or jordany7 for info on the mandatory mod training update. 8-10-15</div>
         </div>
 
@@ -72,7 +75,7 @@
         <!-- SERVER STATUS /-->
         <div id="status">
             <h3>Server Status</h3>
-            <?php include_once 'cgi-bin/Server.php'; ?>
+            <div id="ss"><?php include_once 'cgi-bin/Server.php'; ?></div>
         </div>
 
         <hr />
@@ -91,8 +94,9 @@
 
         <!-- MOD TRAINING /-->
         <div id="modtrain">
-            <h3>Mod Training Updates</h3>
-
+            <h3>Mod Training</h3>
+            <a href="http://github.com/CriLisCraft/ModTraining/wiki">Mod Training</a>
+            <h4>Updates</h4>
             <div class="well well-sm">
                 <b>8-10-15</b> <p>Updated all of Mod Training</p>
             </div>
@@ -104,7 +108,7 @@
         <div id="vps-io">
             <h3>VPS Health I/O</h3>
             <iframe src="https://premium.boundary.com/embed/e.21d9eaeb2f?d-w=3&d-h=3&d-pad=5&d-header=1&d-legend=0&d-light=1&d-bg=none&d-sg-cpu=0-0-1-1&d-sg-hdr=1-2-1-1-t&d-sg-hdw=1-2-1-1-b&d-sg-mem=0-1-1-1&d-sg-ni=1-0-1-2-t&d-sg-no=1-0-1-2-b&d-sg-hdrb=2-0-1-1&d-sg-hdwb=2-2-1-1&d-g-SYSTEM.MEM.FREE=0-2-1-1&d-g-SYSTEM.FS.USE_PERCENT.TOTAL=2-1-1-1#null"
-                    allowtransparency="true" width="1142" height="720"></iframe
+                    allowtransparency="true" width="1142" height="720"></iframe>
         </div>
 
         <hr />
@@ -133,7 +137,7 @@
 
         <!-- FOOTER /-->
         <div class="well well-sm" align="center">
-            &copy; 2011-2015 <a href="http://criliscraft.noip.me/gp">CriLis Craft GP</a>
+            &copy; 2011-2015 <a href="http://gp.criliscraft.cf">CriLis Craft GP</a>
         </div>
     </div>
 </body>
