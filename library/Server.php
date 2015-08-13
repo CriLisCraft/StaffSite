@@ -1,5 +1,5 @@
 <?php
-include_once 'cgi-bin/ServerStatus.php';
+include_once 'ServerStatus.php';
 $status = new MinecraftServerStatus();
 
 $response = $status->getStatus('104.243.39.107');

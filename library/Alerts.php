@@ -2,8 +2,8 @@
 
 include_once 'config.php';
 
-$con = mysql_connect($mySQL_host, $mySQL_user, $mySQL_pass);
-$db = mysql_select_db('clc_staff');
+$con = mysql_connect(HOST, USER, PASS);
+$db = mysql_select_db(DB);
 
 $res = mysql_query('SELECT * FROM alerts');
 
@@ -16,4 +16,4 @@ while ($row = mysql_fetch_array($res)) {
         echo '</div>';
     }
 }
-mysqli_close($con);
+mysql_close($con);

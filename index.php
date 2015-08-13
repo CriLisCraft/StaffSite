@@ -21,25 +21,22 @@
         <!-- NAV /-->
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
             <div class="btn-group" role="group">
-                <a type="button" role="button" class="btn btn-default" href="#notify">Notifications</a>
-            </div>
-            <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-default" href="#ban">Ban Proof</a>
             </div>
             <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-default" href="#status">Server Status</a>
             </div>
             <div class="btn-group" role="group">
-                <a type="button" role="button" class="btn btn-default" href="#mcbans">MCBans Status</a>
-            </div>
-            <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-default" href="#modtrain">Mod Training</a>
             </div>
             <div class="btn-group" role="group">
-                <a type="button" role="button" class="btn btn-default" href="#vps-io">VPS Health I/O</a>
+                <a type="button" role="button" class="btn btn-default" href="projects.php">Projects</a>
             </div>
             <div class="btn-group" role="group">
-                <a type="button" role="button" class="btn btn-default" href="#projects">Projects</a>
+                <a type="button" role="button" class="btn btn-default" href="#mcbans">MCBans Status</a>
+            </div>
+            <div class="btn-group" role="group">
+                <a type="button" role="button" class="btn btn-default" href="#vps-io">VPS Health I/O</a>
             </div>
             <div class="btn-group" role="group">
                 <a type="button" role="button" class="btn btn-danger" href="admin.php">Admin</a>
@@ -50,7 +47,7 @@
 
         <!-- NOTIFICATIONS /-->
         <div id="notify">
-            <?php include_once 'cgi-bin/Alerts.php'; ?>
+            <?php include_once 'library/Alerts.php'; ?>
         </div>
 
         <hr />
@@ -75,19 +72,8 @@
         <!-- SERVER STATUS /-->
         <div id="status">
             <h3>Server Status</h3>
-            <div id="ss"><?php include_once 'cgi-bin/Server.php'; ?></div>
-        </div>
-
-        <hr />
-
-        <!-- MCBANS /-->
-        <div id="mcbans">
-            <h3>MCBans Status</h3>
-
-            <iframe src="http://mcbans.com/server/51786/criliscraft.noip.me/bans/page/1/embed" width="1300" height="825"></iframe>
-            <br/>
-            <h4>Disputes</h4>
-            <iframe src="http://mcbans.com/dispute/list/open_disputes/1" width="1300" height="825"></iframe>
+            <p>Updates every 60 seconds.</p>
+            <div id="ss"><?php include_once 'library/Server.php'; ?></div>
         </div>
 
         <hr />
@@ -97,45 +83,26 @@
             <h3>Mod Training</h3>
             <a href="http://github.com/CriLisCraft/ModTraining/wiki">Mod Training</a>
             <h4>Updates</h4>
-            <div class="well well-sm">
-                <b>8-10-15</b> <p>Updated all of Mod Training</p>
-            </div>
+            <table class="table">
+                <tr>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Note</th>
+                </tr>
+                    <?php include_once 'library/TrainChangelog.php'; ?>
+            </table>
         </div>
 
         <hr/>
 
+        <!-- MCBANS /-->
+        <?php include_once 'library/inc/MCBans.php'; ?>
+
         <!-- VPS HEALTH I/O /-->
-        <div id="vps-io">
-            <h3>VPS Health I/O</h3>
-            <iframe src="https://premium.boundary.com/embed/e.21d9eaeb2f?d-w=3&d-h=3&d-pad=5&d-header=1&d-legend=0&d-light=1&d-bg=none&d-sg-cpu=0-0-1-1&d-sg-hdr=1-2-1-1-t&d-sg-hdw=1-2-1-1-b&d-sg-mem=0-1-1-1&d-sg-ni=1-0-1-2-t&d-sg-no=1-0-1-2-b&d-sg-hdrb=2-0-1-1&d-sg-hdwb=2-2-1-1&d-g-SYSTEM.MEM.FREE=0-2-1-1&d-g-SYSTEM.FS.USE_PERCENT.TOTAL=2-1-1-1#null"
-                    allowtransparency="true" width="1142" height="720"></iframe>
-        </div>
-
-        <hr />
-
-        <!-- PROJECTS /-->
-        <div id="projects">
-            <h3>Current Projects</h3>
-
-            <table class="table">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Notes</th>
-                </tr>
-                <tr>
-                    <td><?php include_once 'cgi-bin/Projects.php' ?>
-                </tr>
-            </table>
-        </div>
-
-        <hr />
+        <?php include_once 'library/inc/VPSHealthIO.php'; ?>
 
         <!-- FOOTER /-->
-        <div class="well well-sm" align="center">
-            &copy; 2011-2015 <a href="http://gp.criliscraft.cf">CriLis Craft GP</a>
-        </div>
+        <?php include_once 'library/inc/Footer.php'; ?>
     </div>
 </body>
 </html>
